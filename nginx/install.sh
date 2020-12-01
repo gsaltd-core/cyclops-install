@@ -1,5 +1,7 @@
 GIT_TOKEN=
-GIT_BRANCH=main
+ENV=vetting-indev-testing
+GIT_BRANCH=sandbox
+
 mkdir cyclops-docker
 mkdir cyclops-docker/conf.d
 mkdir cyclops-docker/certs
@@ -8,13 +10,12 @@ curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.
 curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/conf.d/shared-dynamic.conf -o cyclops-docker/conf.d/shared-dynamic.conf 
 curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/conf.d/shared-static.conf -o cyclops-docker/conf.d/shared-static.conf 
 
-curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/vet-indev.testing.gsaltd.com/conf.d/vet-indev-apollo.testing.gsaltd.com.conf -o cyclops-docker/conf.d/vet-indev-apollo.testing.gsaltd.com.conf;
-curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/vet-indev.testing.gsaltd.com/conf.d/vet-indev-athena.testing.gsaltd.com.conf -o cyclops-docker/conf.d/vet-indev-athena.testing.gsaltd.com.conf; 
-curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/vet-indev.testing.gsaltd.com/conf.d/vet-indev-atlas.testing.gsaltd.com.conf -o cyclops-docker/conf.d/vet-indev-atlas.testing.gsaltd.com.conf; 
-curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/vet-indev.testing.gsaltd.com/conf.d/vet-indev-idserver.testing.gsaltd.com.conf -o cyclops-docker/conf.d/vet-indev-idserver.testing.gsaltd.com.conf; 
-curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/vet-indev.testing.gsaltd.com/conf.d/vet-indev-docviewer.testing.gsaltd.com.conf -o cyclops-docker/conf.d/vet-indev-docviewer.testing.gsaltd.com.conf; 
-curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/vet-indev.testing.gsaltd.com/conf.d/vet-indev-pluto.testing.gsaltd.com.conf -o cyclops-docker/conf.d/vet-indev-pluto.testing.gsaltd.com.conf; 
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/conf.d/vet-indev-testing-apollo.conf -o cyclops-docker/conf.d/$ENV-apollo.conf;
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/conf.d/vet-indev-testing-athena.conf -o cyclops-docker/conf.d/$ENV-athena.conf; 
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/conf.d/vet-indev-testing-atlas..conf -o cyclops-docker/conf.d/$ENV-atlas.conf; 
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/conf.d/vet-indev-testing-idserver.conf -o cyclops-docker/conf.d/$ENV-idserver.conf; 
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/conf.d/vet-indev-testing-docviewer.conf -o cyclops-docker/conf.d/$ENV-docviewer.conf; 
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/conf.d/vet-indev-testing-pluto.conf -o cyclops-docker/conf.d/$ENV-pluto.conf; 
 
-
-curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/vet-indev.testing.gsaltd.com/certs/vetting-indev-signin_testing_gsaltd_com.crt -o cyclops-docker/certs/vetting-indev-signin_testing_gsaltd_com.crt
-curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/vet-indev.testing.gsaltd.com/certs/vetting-indev-signin_testing_gsaltd_com.key -o cyclops-docker/certs/vetting-indev-signin_testing_gsaltd_com.key
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/certs/cyclops.crt -o cyclops-docker/certs/cyclops.crt
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/certs/cyclops.key -o cyclops-docker/certs/cyclops.key
