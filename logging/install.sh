@@ -1,4 +1,8 @@
-curl -H 'Authorization: token <INSERT TOKEN>' -H 'Accept: application/vnd.github.v3.raw' -L https://github.com/gsaltd-core/cyclops-docker-logging/archive/main.zip -o cyclops-docker-logging.zip 
-unzip -o cyclops-docker-logging 
-mv cyclops-docker-logging-main cyclops-docker-logging 
-rm cyclops-docker-logging.zip 
+GIT_TOKEN=
+GIT_BRANCH=main
+mkdir cyclops-docker-logging
+mkdir cyclops-docker-logging/logstash
+mkdir cyclops-docker-logging/logstash/pipeline
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker-logging/$GIT_BRANCH/docker-compose.yml -o cyclops-docker-logging/docker-compose.yml 
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker-logging/$GIT_BRANCH/logstash/pipeline/logstash.conf -o cyclops-docker-logging/logstash/pipeline/logstash.conf 
+
