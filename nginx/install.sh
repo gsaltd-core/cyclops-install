@@ -1,6 +1,6 @@
 GIT_TOKEN=
-ENV=vet-indev-testing
-GIT_BRANCH=sandbox
+ENV=
+GIT_BRANCH=main
 
 mkdir cyclops-docker
 mkdir cyclops-docker/conf.d
