@@ -20,5 +20,6 @@ curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.
 curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/conf.d/jupiter.conf -o cyclops-docker/conf.d/$ENV-jupiter.conf; 
 curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/conf.d/restws.conf -o cyclops-docker/conf.d/$ENV-restws.conf; 
 
-curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/certs/cyclops.crt -o cyclops-docker/certs/cyclops.crt
-curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/certs/cyclops.key -o cyclops-docker/certs/cyclops.key
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/certs/testlocal-server.crt -o cyclops-docker/certs/testlocal-server.crt
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/certs/testlocal-server.key -o cyclops-docker/certs/testlocal-server.key
+curl -H "Authorization: token $GIT_TOKEN" -H 'Accept: application/vnd.github.v3.raw' -L https://raw.githubusercontent.com/gsaltd-core/cyclops-docker/$GIT_BRANCH/$ENV/certs/testlocal-ca.crt -o cyclops-docker/certs/testlocal-ca.crt
